@@ -5,16 +5,27 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import MapaScreen from './screens/MapaScreen';
 import NovoMarkerScreen from './screens/NovoMarkerScreen';
+import { MarcadoresProvider } from './contexts/ContextMarcadores';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Mapa" component={MapaScreen} />
-        <Stack.Screen name="NovoMarker" component={NovoMarkerScreen} />
-      </Stack.Navigator>
+      <MarcadoresProvider>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Mapa"
+            component={MapaScreen}
+            options={{ title: 'Mapa' }}
+          />
+          <Stack.Screen
+            name="NovoMarker"
+            component={NovoMarkerScreen}
+            options={{ title: 'Novo Marker' }}
+          />
+        </Stack.Navigator>
+      </MarcadoresProvider>
     </NavigationContainer>
   );
 }
