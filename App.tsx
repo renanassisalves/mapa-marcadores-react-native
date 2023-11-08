@@ -22,7 +22,7 @@ function App() {
           <Stack.Screen
             name="NovoMarker"
             component={NovoMarkerScreen}
-            options={{ title: 'Novo Marker' }}
+            options={{ title: 'Novo Marcador' }}
           />
         </Stack.Navigator>
       </MarcadoresProvider>

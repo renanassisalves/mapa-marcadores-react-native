@@ -12,23 +12,6 @@ import styled from 'styled-components'
 
 import { MarcadoresContext } from '../contexts/ContextMarcadores';
 
-// const listaMarcadores = 
-//   [
-//     {
-//           latitude: -20.9570274,
-//           longitude: -48.4733242,
-//     },
-//     {
-//           latitude: -20.9638002,
-//           longitude: -48.4730667,
-//     },
-//     {
-//       latitude: -20.9738002,
-//       longitude: -48.4730667,
-//     },
-//   ]
-
-
 function MapaScreen({ navigation }) {
   const marcadoresObject = useContext(MarcadoresContext);
   const [localizacaoAtual, setLocalizacaoAtual] = useState({
@@ -55,7 +38,8 @@ function MapaScreen({ navigation }) {
                 longitude: item.longitude
               }}
                 key={index}
-                pinColor={"purple"} />
+                pinColor={item.color}
+                title={item.title} />
             );
           })
         }
@@ -63,6 +47,7 @@ function MapaScreen({ navigation }) {
           latitude: localizacaoAtual.latitude,
           longitude: localizacaoAtual.longitude
         }}
+          title='Localização selecionada'
           key={'atual'}
           pinColor={"orange"} />
       </MapView>
@@ -89,7 +74,7 @@ function MapaScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    flex: 1, //the container will fill the whole screen.
+    flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
   },
