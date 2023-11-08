@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapaScreen from './screens/MapaScreen';
 import NovoMarkerScreen from './screens/NovoMarkerScreen';
 import { MarcadoresProvider } from './contexts/ContextMarcadores';
+import ListaMarkerScreen from './screens/ListaMarkerScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,11 @@ function App() {
             name="NovoMarker"
             component={NovoMarkerScreen}
             options={{ title: 'Novo Marcador' }}
+          />
+          <Stack.Screen
+            name="ListaMarkers"
+            component={ListaMarkerScreen}
+            options={{ title: 'Lista de Marcadores' }}
           />
         </Stack.Navigator>
       </MarcadoresProvider>

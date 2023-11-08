@@ -12,8 +12,10 @@ import styled from 'styled-components'
 
 import { MarcadoresContext } from '../contexts/ContextMarcadores';
 
-function MapaScreen({ navigation }) {
+function MapaScreen({ navigation, route }) {
   const marcadoresObject = useContext(MarcadoresContext);
+  const initialRegion = route.params ? route.params.initialRegion : marcadoresObject.localizacaoInicial;
+  
   const [localizacaoAtual, setLocalizacaoAtual] = useState({
     latitude: 0,
     longitude: 0,
@@ -24,7 +26,7 @@ function MapaScreen({ navigation }) {
     <View style={styles.container}>
       <MapView
         style={styles.map}
-        initialRegion={marcadoresObject.localizacaoInicial}
+        initialRegion={initialRegion}
         onPress={(event) => {
           const { coordinate } = event.nativeEvent;
           setLocalizacaoAtual(coordinate);
@@ -63,6 +65,12 @@ function MapaScreen({ navigation }) {
             })
         }}>
           <Text style={{ color: 'white', fontSize: 17 }}>Adicionar novo marcador</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botaoAdicionar} onPress={() => {
+          navigation.navigate('ListaMarkers')
+        }}>
+          <Text style={{ color: 'white', fontSize: 17 }}>Listar marcadores</Text>
         </TouchableOpacity>
       </View>
 
