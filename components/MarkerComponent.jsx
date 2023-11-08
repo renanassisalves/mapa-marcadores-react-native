@@ -4,7 +4,7 @@ import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 
 export const MarkerComponent = ({ markerObject, navigation }) => {
     const mostrarNoMapaHandler = () => {
-        navigation.navigate('Mapa', {
+        navigation.push('Mapa', {
           initialRegion: {
             latitude: markerObject.latitude,
             longitude: markerObject.longitude,
