@@ -9,20 +9,20 @@ export const MarcadoresProvider = ({ children }) => {
         listaMarcadores: [
             {
                 title: 'Marcador1',
-                latitude: -20.9570274,
+                latitude: -20.9270274,
                 longitude: -48.4733242,
                 color: 'yellow',
             },
             {
                 title: 'Marcador2',
-                latitude: -20.9638002,
-                longitude: -48.4730667,
+                latitude: -20.9438002,
+                longitude: -48.4530667,
                 color: 'blue',
             },
             {
                 title: 'Marcador3',
-                latitude: -20.9738002,
-                longitude: -48.4730667,
+                latitude: -20.9638002,
+                longitude: -48.4830667,
                 color: 'purple',
             }
         ],
