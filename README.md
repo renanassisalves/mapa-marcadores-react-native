@@ -1,5 +1,5 @@
 # Aplicativo mapa com marcadores
-Aplicativo sem uso específico, feito para pós graduação mobile, para aprendizado da criação de apps com mapa no React Native.
+Aplicativo sem uso específico, feito em pós graduação mobile, para aprendizado da criação de apps com mapa no React Native.
 
 ## Tecnologias utilizadas
 
