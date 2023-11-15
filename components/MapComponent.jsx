@@ -7,7 +7,6 @@ import { MarcadoresContext } from '../contexts/ContextMarcadores';
 
 function MapComponent({localizacaoAtual, setLocalizacaoAtual, marcadores, navigation, route }) {
   const marcadoresObject = useContext(MarcadoresContext);
-  console.log(route?.params?.initialRegion)
   const [initialRegion, setInitialRegion] = useState(
     route?.params?.initialRegion || marcadoresObject.localizacaoInicial
   );

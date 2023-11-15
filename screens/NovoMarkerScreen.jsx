@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { ColorPicker } from 'react-native-color-picker';
-import Slider from '@react-native-community/slider';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { MarcadoresContext } from '../contexts/ContextMarcadores';
 import RNPickerSelect from 'react-native-picker-select';
